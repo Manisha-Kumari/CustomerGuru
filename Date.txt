@@ -1,0 +1,9 @@
+// Count from Fist day of the month to FromDate - 1
+
+DATEDIFF ('day', DATETRUNC('month',DATEADD('month', -1, DATETRUNC('month',DATEADD('month',1,[ToDate])) )), [FromDate])
+
++
+
+// Count from To Date + 1 To End of the Month
+
+DATEDIFF ('day', dateadd('day', 1, [ToDate]), DATETRUNC('month',DATEADD('month',1,[ToDate]))-1)

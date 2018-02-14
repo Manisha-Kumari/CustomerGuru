@@ -1,0 +1,50 @@
+<html>
+	  <title>Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+ <script>
+ function validate(){
+ var num= document.myform.num.value;
+ var name=document.myform.name.value;
+ 
+ if(isNaN(num)){
+ 
+ document.getElementById("numloc").innerHTML="Enter Numeric value only";
+   return false;
+ }else{
+ return true;
+ 
+ }
+ }
+ 
+ 
+ </script>
+  </head>
+  
+  <body>
+  
+  <form name="myform" action="#" onsubmit="return validate()">
+  <p>Name: <input type="text" autofocus pattern="[a-z]{1,15}"  required  placeholder="Enter your Name"></p>
+  
+  <p>PhoneNumber:<input type="text" name="num" placeholder="Enter your phone number" autocomplete="off" maxlength="10"  required><span id="numloc"></span><br/>
+  
+  <p>Email:<input type="email" placeholder="Enter your email" required></p>
+  
+  <datalist id="names">
+       <select>
+           <option value="Delhi">Delhi</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Kolkata">Kolkata</option>
+           <option value="Chennai">Chennai</option>
+           <option value="Bangalore">Bangalore</option>
+       </select>
+  </datalist>
+  
+  <p>City:<input type="text" list="names"></p>
+  
+  <input type="submit"  value="submit to #.php" >
+  
+  </form>
+  </body>
+  
+</html>
